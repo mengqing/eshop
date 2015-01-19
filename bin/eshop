@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'eshop'
+
+shop = Eshop::Shop.new
+shop.start

@@ -1,9 +1,15 @@
 module Eshop
+  # Main entry-point class for the gem
+  #
+  # @since 0.1.0
   class Shop
     def initialize
       @line_items = []
     end
 
+    # Entry-point method
+    #
+    # @since 0.1.0
     def start
       puts 'Quantity, Product, Price'
       while user_input = Readline.readline.split(',').map(&:strip) do
@@ -29,14 +35,17 @@ module Eshop
 
     private
     
+    # @since 0.1.0
     def _add_line_item(line_item)
       @line_items << line_item
     end
 
+    # @since 0.1.0
     def _show_line_items
       puts @line_items.map(&:to_s)
     end
 
+    # @since 0.1.0
     def _show_grand_total
       puts "\n"
       puts "Sales Taxes: #{'%.2f' % @line_items.map(&:total_tax).reduce(:+)}"
